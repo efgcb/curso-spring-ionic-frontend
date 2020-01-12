@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EstadoService } from '../../services/donain/estado.service';
 
 /**
  * Generated class for the EstadosPage page.
@@ -15,11 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EstadosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public estadoService: EstadoService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EstadosPage');
-  }
-
+    this.estadoService.findAll()
+      .subscribe(response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      });    
+  } 
 }
