@@ -6,7 +6,7 @@ import { LocalUser } from "../models/local_user";
 export class StorageService {
 
     getLocalUser() : LocalUser {
-        let usr = localStorage.getItem(STORAGE_KEYS.LocalUser);
+        let usr = localStorage.getItem(STORAGE_KEYS.localUser);
         if (usr == null) {
             return null;
         }
@@ -17,7 +17,7 @@ export class StorageService {
 
     setLocalUser(obj : LocalUser) {
         if (obj == null) {
-            localStorage.removeItem(STORAGE_KEYS.LocalUser);
+            localStorage.removeItem(STORAGE_KEYS.localUser);
         }
         else {
             localStorage.setItem(STORAGE_KEYS.localUser, JSON.stringify(obj));
