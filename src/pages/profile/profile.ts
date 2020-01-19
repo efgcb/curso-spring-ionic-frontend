@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StorageService } from '../../services/storage.service';
 import { Usuario } from '../../models/usuario';
 import { UsuarioService } from '../../services/usuario.service';
+import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
 
 
@@ -30,7 +31,14 @@ export class ProfilePage {
           this.usuario = response;
           //buscar imagem
         }, 
-        error => {});
+        error => {
+          if (error.status == 403) {
+            this.navCtrl.setRoot('HomePage');
+          }
+        });
+    }
+    else {
+      this.navCtrl.setRoot('HomePage');
     }
   }
 
