@@ -9,16 +9,10 @@ import { StorageService } from "./storage.service";
 export class UsuarioService {
 
     constructor(public http: HttpClient, public storage: StorageService) {
-
     }
 
     findByEmail(email: string) : Observable<Usuario> {
-
-        let token = this.storage.getLocalUser().token;
-        let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token});
-
-        return this.http.get<Usuario>(
-            `${API_CONFIG.baseUrl}/usuario/email?value=${email}`,
-            {'headers' : authHeader});
+             return this.http.get<Usuario>(`${API_CONFIG.baseUrl}/usuario/email?value=${email}`);
+            
     }
 }

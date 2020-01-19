@@ -12,6 +12,7 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { UsuarioService } from '../services/usuario.service';
+import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { UsuarioService } from '../services/usuario.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EstadoService,
+    AuthInterceptorProvider,
     ErrorInterceptorProvider,
     AuthService,
     StorageService,
