@@ -11,6 +11,8 @@ import { EstadoService } from '../services/donain/estado.service';
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
+import { UsuarioService } from '../services/usuario.service';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { StorageService } from '../services/storage.service';
     EstadoService,
     ErrorInterceptorProvider,
     AuthService,
-    StorageService
+    StorageService,
+    UsuarioService
   ]
 })
 export class AppModule {}
