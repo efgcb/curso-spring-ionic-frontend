@@ -37,10 +37,7 @@ export class HomePage {
       this.navCtrl.setRoot('EstadosPage');
     },
     error => {});
-
   }
-
-
 
   login() {
     this.auth.authenticate(this.creds)
@@ -48,8 +45,10 @@ export class HomePage {
       this.auth.sucessfulLogin(response.headers.get('Authorization'));      
       this.navCtrl.setRoot('EstadosPage');
     },
-    error => {});
-  
+    error => {});  
   }
 
+  signup() {
+    this.navCtrl.push('SignupPage');
+  }
 }
