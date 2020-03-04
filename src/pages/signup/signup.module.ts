@@ -14,7 +14,6 @@ import { OrganizacaoService } from '../../services/donain/organizacao.service';
   providers: [
     CorporacaoService,
     OrganizacaoService
-
   ]
 })
 export class SignupPageModule {}

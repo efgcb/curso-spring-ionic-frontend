@@ -39,17 +39,17 @@ export class SignupPage {
       .subscribe(response => {
         this.corporacoes = response;
         this.formGroup.controls.corporacaoId.setValue(this.corporacoes[0].id);
-        this.updateOrganizaoes();
+        this.updateOrganizacoes();
       },
       error => {});
   }
 
-    updateOrganizaoes(){
+    updateOrganizacoes(){
       let corporacaoId = this.formGroup.value.corporacaoId;
       this.organizacaoService.findAll(corporacaoId)
         .subscribe(response => {
           this.organizacoes = response;
-          this.formGroup.controls.corporacaoId.setValue(null);
+          this.formGroup.controls.organizacaoId.setValue(null);
         },
         error => {});
     }
