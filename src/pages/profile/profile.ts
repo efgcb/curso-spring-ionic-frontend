@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StorageService } from '../../services/storage.service';
-import { Usuario } from '../../models/usuario';
+import { Usuario } from '../../models/usuario.dto';
 import { UsuarioService } from '../../services/usuario.service';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 

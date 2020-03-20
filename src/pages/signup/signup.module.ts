@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { SignupPage } from './signup';
-import { CorporacaoService } from '../../services/donain/corporacao.service';
-import { OrganizacaoService } from '../../services/donain/organizacao.service';
+import { CorporacaoService } from '../../services/domain/corporacao.service';
+import { OrganizacaoService } from '../../services/domain/organizacao.service';
+import { UsuarioService } from '../../services/usuario.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { OrganizacaoService } from '../../services/donain/organizacao.service';
   ],
   providers: [
     CorporacaoService,
-    OrganizacaoService
+    OrganizacaoService,
+    UsuarioService
   ]
 })
 export class SignupPageModule {}

@@ -11,7 +11,7 @@ export class OrganizacaoService {
     constructor(public http: HttpClient) {
 
     }
-    findAll(CrpID : string) : Observable<OrganizacaoDTO[]> {
-        return this.http.get<OrganizacaoDTO[]>(`${API_CONFIG.baseUrl}/corporacoes/${CrpID}/organizacoes`);
+    findAll(corporacao_id : string) : Observable<OrganizacaoDTO[]> {
+        return this.http.get<OrganizacaoDTO[]>(`${API_CONFIG.baseUrl}/corporacoes/${corporacao_id}/organizacoes`);
     }
 }
