@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OrganizacaoDTO } from '../../models/organizacao.dto';
+import { OrganizacaoService } from '../../services/domain/organizacao.service';
 
 
 
@@ -13,19 +14,18 @@ export class OrganizacoesPage {
 
   items: OrganizacaoDTO[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public organizacaoService: OrganizacaoService) {
   }
 
   ionViewDidLoad() {
-    this.items = [
-      {
-      id: "1",
-      nome: "Organização",
-      ddd: "011",
-      telefone: "982536938",
-      contato: "Eduardo",
-      email: "efgcb@windowslive.com"
-    }
-    ]
-  };
+    let corporacao_id = this.navParams.get('corporacao_id');
+    this.organizacaoService.findByCorporacao(corporacao_id)
+      .subscribe(response => {
+        this.items = response;
+      },
+      error => {});
+  }
 }

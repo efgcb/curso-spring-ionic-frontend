@@ -51,7 +51,7 @@ export class SignupPage {
 
     updateOrganizacoes(){
       let corporacao_id = this.formGroup.value.corporacaoId;
-      this.organizacaoService.findAll(corporacao_id)
+      this.organizacaoService.findByCorporacao(corporacao_id)
         .subscribe(response => {
           this.organizacoes = response;
           this.formGroup.controls.organizacaoId.setValue(null);

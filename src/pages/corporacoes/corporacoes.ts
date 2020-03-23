@@ -31,8 +31,8 @@ export class CorporacoesPage {
     this.navCtrl.push('CadastrarCorporacaoPage');
   }
 
-  showOrganizacoes(){
-    this.navCtrl.push('OrganizacoesPage')
+  showOrganizacoes(corporacao_id : string){
+    this.navCtrl.push('OrganizacoesPage', {corporacao_id: corporacao_id});
 
   }
 }
