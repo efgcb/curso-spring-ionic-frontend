@@ -1,4 +1,4 @@
-export interface Usuario {
+export interface UsuarioDTO {
     email : string;
     id : string;    
     organizacao : string;

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StorageService } from '../../services/storage.service';
-import { Usuario } from '../../models/usuario.dto';
-import { UsuarioService } from '../../services/usuario.service';
+import { UsuarioDTO } from '../../models/usuario.dto';
+import { UsuarioService } from '../../services/domain/usuario.service';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
 
@@ -14,7 +14,7 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 })
 export class ProfilePage {
 
-    usuario: Usuario;
+    usuario: UsuarioDTO;
 
   constructor(
     public navCtrl: NavController, 

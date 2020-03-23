@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Organizações</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+    <ion-list>
+      <button ion-item *ngFor="let item of items">
+        <h2>{{item.nome}}</h2>
+        <p>{{item.ddd}}</p>
+        <p>{{item.telefone}}</p>
+        <p>{{item.contato}}</p>
+        <p>{{item.email}}</p>
+      </button>     
+    </ion-list>  
+  </ion-content>

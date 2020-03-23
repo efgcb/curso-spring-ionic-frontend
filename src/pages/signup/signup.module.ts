@@ -3,7 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { SignupPage } from './signup';
 import { CorporacaoService } from '../../services/domain/corporacao.service';
 import { OrganizacaoService } from '../../services/domain/organizacao.service';
-import { UsuarioService } from '../../services/usuario.service';
+import { UsuarioService } from '../../services/domain/usuario.service';
 
 @NgModule({
   declarations: [

@@ -14,4 +14,15 @@ export class CorporacaoService {
     findAll() : Observable<CorporacaoDTO[]> {
         return this.http.get<CorporacaoDTO[]>(`${API_CONFIG.baseUrl}/corporacoes`);
     }
+
+    insert(obj: CorporacaoDTO) {
+        return this.http.post(
+            `${API_CONFIG.baseUrl}/corporacoes`,
+            obj,
+            {
+                observe: 'response',
+                responseType: 'text'
+            }
+        );
+    }
 }

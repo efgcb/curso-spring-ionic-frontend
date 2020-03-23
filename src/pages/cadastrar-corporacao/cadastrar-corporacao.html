@@ -1,0 +1,20 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cadastrar Nova Corporação</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formGroup" (ngSubmit)="insereCorporacao(); $event.preventDefault()">
+    <ion-item>
+      <ion-label stacked>Nome*</ion-label>
+      <ion-input formControlName="nome" type="text"></ion-input>
+    </ion-item>  
+    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left>Valor inválido</p>
+    <button ion-button block type="submit" [disabled]="formGroup.invalid">Cadastrar Corporação</button>
+  </form>
+</ion-content>

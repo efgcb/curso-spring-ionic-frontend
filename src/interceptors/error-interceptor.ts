@@ -3,13 +3,14 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse
 import { Observable } from 'rxjs/Rx';
 import { StorageService } from '../services/storage.service';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
-import { FieldMessage } from '../models/fieldmesage';
+import { FieldMessage } from '../models/fieldmessage';
 
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
-    constructor(public storage: StorageService, public alertCtrl: AlertController){
+    constructor(public storage: StorageService, 
+                public alertCtrl: AlertController){
 
     }
     
@@ -32,14 +33,14 @@ export class ErrorInterceptor implements HttpInterceptor {
                     case 401:
                     this.handle401();
                     break;
-
-                    case 422:
-                        this.handle422(errorObj);
-                        break;
                     
                     case 403: 
                     this.handle403();
-                    break;                  
+                    break;     
+                    
+                    case 422:
+                    this.handle422(errorObj);
+                    break;
 
                     default:
                     this.handleDefaultError(errorObj);

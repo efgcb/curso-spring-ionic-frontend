@@ -5,5 +5,4 @@ export interface OrganizacaoDTO {
     telefone : string;
     contato : string;
     email : string;
-
 }

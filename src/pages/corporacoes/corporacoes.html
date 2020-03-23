@@ -1,0 +1,19 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+
+    </button>
+    <ion-title>Corporações</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="showOrganizacoes()">
+      <h2>  {{ item.nome }}    </h2>
+    </button>
+  </ion-list>
+  <button ion-button block outline (click)="cadastrarCorporacao()">Nova Corporação</button>
+</ion-content>

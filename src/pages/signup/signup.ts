@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CorporacaoService } from '../../services/domain/corporacao.service';
 import { OrganizacaoService } from '../../services/domain/organizacao.service';
-import { UsuarioService } from '../../services/usuario.service';
+import { UsuarioService } from '../../services/domain/usuario.service';
 import { CorporacaoDTO } from '../../models/corporacao.dto'
 import { OrganizacaoDTO} from '../../models/organizacao.dto'
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';

@@ -10,8 +10,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
-import { UsuarioService } from '../services/usuario.service';
+import { UsuarioService } from '../services/domain/usuario.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
+import { CorporacaoService } from '../services/domain/corporacao.service';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
     ErrorInterceptorProvider,
     AuthService,
     StorageService,
-    UsuarioService
+    UsuarioService,
+    CorporacaoService
   ]
 })
 export class AppModule {}
